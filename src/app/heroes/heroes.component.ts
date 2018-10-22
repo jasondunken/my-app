@@ -3,12 +3,12 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 @Component({
-  selector: 'app-heros',
-  templateUrl: './heros.component.html',
-  styleUrls: ['./heros.component.css']
+  selector: 'app-heroes',
+  templateUrl: './heroes.component.html',
+  styleUrls: ['./heroes.component.css']
 })
-export class HerosComponent implements OnInit {
-  heros: Hero[];
+export class HeroesComponent implements OnInit {
+  heroes: Hero[];
 
   selectedHero: Hero;
   onSelect(hero: Hero): void {
@@ -16,7 +16,7 @@ export class HerosComponent implements OnInit {
   }
 
   getHeros(): void {
-    this.heroService.getHeros().subscribe(heros => this.heros = heros);
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   constructor(private heroService: HeroService) { }
